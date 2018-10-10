@@ -7,6 +7,7 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import models.ModelAgenda;
 import views.ViewAgenda;
 
@@ -38,10 +39,13 @@ public class ControllerAgenda {
                 jbtn_nuevo_actionPerformed();
             } else if (e.getSource() == viewAgenda.jbtn_insertar){
                 jbtn_insertar_actionPerformed();
+                jbtn_primero_actionPerformed();
             } else if (e.getSource() == viewAgenda.jbtn_modificar){
                 jbtn_modificar_actionPerformed();
+                jbtn_primero_actionPerformed();
             } else if (e.getSource() == viewAgenda.jbtn_eliminar){
                 jbtn_eliminar_actionPerformed();
+                jbtn_primero_actionPerformed();
             }
         }
     };
@@ -156,18 +160,34 @@ public class ControllerAgenda {
         modelAgenda.setEmail(viewAgenda.jtf_email.getText());
         modelAgenda.setNombre(viewAgenda.jtf_nombre.getText());
         modelAgenda.setTelefono(viewAgenda.jtf_telefono.getText());
-        modelAgenda.insertarRegistro(modelAgenda.getNombre(), modelAgenda.getEmail(), modelAgenda.getTelefono());
+        modelAgenda.insertarRegistro(
+                modelAgenda.getNombre(), 
+                modelAgenda.getEmail(), 
+                modelAgenda.getTelefono());
+        
     }
     /**
      * Método para modificar los datos de un registro
      */
     private void jbtn_modificar_actionPerformed() {
         System.out.println("Action del boton jbtn_modificar - Controller Agenda");
+        modelAgenda.modificarRegistro(
+                viewAgenda.jtf_nombre.getText(), 
+                viewAgenda.jtf_email.getText(),
+                viewAgenda.jtf_telefono.getText());
     }
     /**
      * Método para eliminar un registro
      */
     private void jbtn_eliminar_actionPerformed() {
         System.out.println("Action del boton jbtn_eliminar - Controller Agenda");
+        int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro de "
+                    + "eliminar el registro?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        if(resp==0){
+            modelAgenda.setEmail(viewAgenda.jtf_email.getText());
+            modelAgenda.setNombre(viewAgenda.jtf_nombre.getText());
+            modelAgenda.setTelefono(viewAgenda.jtf_telefono.getText());
+            modelAgenda.eliminarRegistro(modelAgenda.getEmail());
+        }
     }
 }
