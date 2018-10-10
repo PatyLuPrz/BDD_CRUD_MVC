@@ -175,9 +175,10 @@ public class ModelAgenda {
         System.out.println("Accion modificarRegistro - ModelAgenda");
         try{
             String actualEmail = this.getEmail();
-            st.executeUpdate("UPDATE contactos SET NOMBRE='"+nombre+"',email='"+email+"',telefono='"+telefono+"' WHERE email='"+actualEmail+"';");
+            String sql = "UPDATE contactos SET nombre='"+nombre+"',email='"+email+"',telefono='"+telefono+"' WHERE email='"+actualEmail+"';";
+            st.executeUpdate(sql);
             this.conectarDB();
-        } catch(SQLException ex){
+           } catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Error ModelAgenda 008: " + ex.getMessage());
         }
     }
@@ -185,7 +186,8 @@ public class ModelAgenda {
     public void eliminarRegistro(String email){
         System.out.println("Accion eliminarRegistro - ModelAgenda");
         try{
-            st.executeUpdate("DELETE FROM contactos WHERE email='"+email+"';"); //CORREGIR
+            String sql= "DELETE FROM contactos WHERE email='"+email+"'";
+            st.executeUpdate(sql);
             this.conectarDB();
         } catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Error ModelAgenda 009: " + ex.getMessage());
