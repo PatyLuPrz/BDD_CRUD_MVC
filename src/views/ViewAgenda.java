@@ -45,14 +45,21 @@ public class ViewAgenda extends javax.swing.JPanel {
         jbtn_insertar = new javax.swing.JButton();
         jbtn_modificar = new javax.swing.JButton();
         jbtn_eliminar = new javax.swing.JButton();
+        jbtn_cancelar = new javax.swing.JButton();
 
         jp_principal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        jtf_nombre.setEditable(false);
 
         jl_nombre.setText("Nombre");
 
         jl_email.setText("Email");
 
+        jtf_email.setEditable(false);
+
         jl_telefono.setText("Telefono");
+
+        jtf_telefono.setEditable(false);
 
         jl_titulo.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -139,11 +146,15 @@ public class ViewAgenda extends javax.swing.JPanel {
 
         jbtn_nuevo.setText("Nuevo");
 
-        jbtn_insertar.setText("Insertar");
+        jbtn_insertar.setText("Guardar");
+        jbtn_insertar.setEnabled(false);
 
         jbtn_modificar.setText("Modificar");
 
         jbtn_eliminar.setText("Eliminar");
+
+        jbtn_cancelar.setText("Cancelar");
+        jbtn_cancelar.setEnabled(false);
 
         javax.swing.GroupLayout jp_crudLayout = new javax.swing.GroupLayout(jp_crud);
         jp_crud.setLayout(jp_crudLayout);
@@ -155,13 +166,14 @@ public class ViewAgenda extends javax.swing.JPanel {
                     .addComponent(jbtn_nuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbtn_insertar, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                     .addComponent(jbtn_modificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtn_eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbtn_eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtn_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jp_crudLayout.setVerticalGroup(
             jp_crudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_crudLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(45, 45, 45)
                 .addComponent(jbtn_nuevo)
                 .addGap(18, 18, 18)
                 .addComponent(jbtn_insertar)
@@ -169,6 +181,8 @@ public class ViewAgenda extends javax.swing.JPanel {
                 .addComponent(jbtn_modificar)
                 .addGap(18, 18, 18)
                 .addComponent(jbtn_eliminar)
+                .addGap(18, 18, 18)
+                .addComponent(jbtn_cancelar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -202,6 +216,7 @@ public class ViewAgenda extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jbtn_anterior;
+    public javax.swing.JButton jbtn_cancelar;
     public javax.swing.JButton jbtn_eliminar;
     public javax.swing.JButton jbtn_insertar;
     public javax.swing.JButton jbtn_modificar;
