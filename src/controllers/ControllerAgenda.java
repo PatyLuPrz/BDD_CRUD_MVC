@@ -95,6 +95,7 @@ public class ControllerAgenda {
         viewAgenda.jbtn_insertar.addActionListener(actionListener);
         viewAgenda.jbtn_modificar.addActionListener(actionListener);
         viewAgenda.jbtn_eliminar.addActionListener(actionListener);
+        viewAgenda.jbtn_cancelar.addActionListener(actionListener);
     }
 
     /**
@@ -148,6 +149,16 @@ public class ControllerAgenda {
      */
     private void jbtn_nuevo_actionPerformed() {
         System.out.println("Action del boton jbtn_nuevo - Controller Agenda");
+        viewAgenda.jtf_nombre.setEditable(true);
+        viewAgenda.jtf_email.setEditable(true);
+        viewAgenda.jtf_telefono.setEditable(true);
+        viewAgenda.jbtn_anterior.setEnabled(false);
+        viewAgenda.jbtn_siguiente.setEnabled(false);
+        viewAgenda.jbtn_primero.setEnabled(false);
+        viewAgenda.jbtn_ultimo.setEnabled(false);
+        viewAgenda.jbtn_modificar.setEnabled(false);
+        viewAgenda.jbtn_eliminar.setEnabled(false);
+        viewAgenda.jbtn_nuevo.setEnabled(false);
         viewAgenda.jtf_nombre.setText(null);
         viewAgenda.jtf_email.setText(null);
         viewAgenda.jtf_telefono.setText(null);
@@ -164,7 +175,17 @@ public class ControllerAgenda {
                 modelAgenda.getNombre(), 
                 modelAgenda.getEmail(), 
                 modelAgenda.getTelefono());
-        
+        JOptionPane.showMessageDialog(null,"Registro añadido con exito");
+        viewAgenda.jbtn_anterior.setEnabled(true);
+        viewAgenda.jbtn_siguiente.setEnabled(true);
+        viewAgenda.jbtn_primero.setEnabled(true);
+        viewAgenda.jbtn_ultimo.setEnabled(true);
+        viewAgenda.jbtn_modificar.setEnabled(true);
+        viewAgenda.jbtn_eliminar.setEnabled(true);
+        viewAgenda.jbtn_nuevo.setEnabled(true);
+        viewAgenda.jtf_nombre.setEditable(false);
+        viewAgenda.jtf_email.setEditable(false);
+        viewAgenda.jtf_telefono.setEditable(false);
     }
     /**
      * Método para modificar los datos de un registro
@@ -175,6 +196,7 @@ public class ControllerAgenda {
                 viewAgenda.jtf_nombre.getText(), 
                 viewAgenda.jtf_email.getText(),
                 viewAgenda.jtf_telefono.getText());
+        JOptionPane.showMessageDialog(null,"Registro modificado con exito");
     }
     /**
      * Método para eliminar un registro
@@ -188,6 +210,7 @@ public class ControllerAgenda {
             modelAgenda.setNombre(viewAgenda.jtf_nombre.getText());
             modelAgenda.setTelefono(viewAgenda.jtf_telefono.getText());
             modelAgenda.eliminarRegistro(modelAgenda.getEmail());
+            JOptionPane.showMessageDialog(null,"Registro borrado con exito");
         }
     }
 }
