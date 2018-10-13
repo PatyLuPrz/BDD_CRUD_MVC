@@ -46,6 +46,10 @@ public class ControllerAgenda {
             } else if (e.getSource() == viewAgenda.jbtn_eliminar){
                 jbtn_eliminar_actionPerformed();
                 jbtn_primero_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_cancelar){
+                jbtn_cancelar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_editar){
+                jbtn_editar_actionPerformed();
             }
         }
     };
@@ -96,6 +100,7 @@ public class ControllerAgenda {
         viewAgenda.jbtn_modificar.addActionListener(actionListener);
         viewAgenda.jbtn_eliminar.addActionListener(actionListener);
         viewAgenda.jbtn_cancelar.addActionListener(actionListener);
+        viewAgenda.jbtn_editar.addActionListener(actionListener);
     }
 
     /**
@@ -159,9 +164,12 @@ public class ControllerAgenda {
         viewAgenda.jbtn_modificar.setEnabled(false);
         viewAgenda.jbtn_eliminar.setEnabled(false);
         viewAgenda.jbtn_nuevo.setEnabled(false);
+        viewAgenda.jbtn_cancelar.setEnabled(true);
+        viewAgenda.jbtn_insertar.setEnabled(true);
         viewAgenda.jtf_nombre.setText(null);
         viewAgenda.jtf_email.setText(null);
         viewAgenda.jtf_telefono.setText(null);
+        viewAgenda.jbtn_editar.setEnabled(false);
     }
     /**
      * Método para insertar un nuevo registro a la base de datos
@@ -176,16 +184,8 @@ public class ControllerAgenda {
                 modelAgenda.getEmail(), 
                 modelAgenda.getTelefono());
         JOptionPane.showMessageDialog(null,"Registro añadido con exito");
-        viewAgenda.jbtn_anterior.setEnabled(true);
-        viewAgenda.jbtn_siguiente.setEnabled(true);
-        viewAgenda.jbtn_primero.setEnabled(true);
-        viewAgenda.jbtn_ultimo.setEnabled(true);
-        viewAgenda.jbtn_modificar.setEnabled(true);
-        viewAgenda.jbtn_eliminar.setEnabled(true);
-        viewAgenda.jbtn_nuevo.setEnabled(true);
-        viewAgenda.jtf_nombre.setEditable(false);
-        viewAgenda.jtf_email.setEditable(false);
-        viewAgenda.jtf_telefono.setEditable(false);
+        jbtn_cancelar_actionPerformed();
+        
     }
     /**
      * Método para modificar los datos de un registro
@@ -197,6 +197,7 @@ public class ControllerAgenda {
                 viewAgenda.jtf_email.getText(),
                 viewAgenda.jtf_telefono.getText());
         JOptionPane.showMessageDialog(null,"Registro modificado con exito");
+        jbtn_cancelar_actionPerformed();
     }
     /**
      * Método para eliminar un registro
@@ -212,5 +213,43 @@ public class ControllerAgenda {
             modelAgenda.eliminarRegistro(modelAgenda.getEmail());
             JOptionPane.showMessageDialog(null,"Registro borrado con exito");
         }
+        jbtn_cancelar_actionPerformed();
+    }
+    /**
+     * Metodo para cancelar una acción
+     */
+    private void jbtn_cancelar_actionPerformed() {
+        jbtn_primero_actionPerformed();
+        viewAgenda.jbtn_anterior.setEnabled(true);
+        viewAgenda.jbtn_siguiente.setEnabled(true);
+        viewAgenda.jbtn_primero.setEnabled(true);
+        viewAgenda.jbtn_ultimo.setEnabled(true);
+        viewAgenda.jbtn_modificar.setEnabled(false);
+        viewAgenda.jbtn_eliminar.setEnabled(true);
+        viewAgenda.jbtn_nuevo.setEnabled(true);
+        viewAgenda.jtf_nombre.setEditable(false);
+        viewAgenda.jtf_email.setEditable(false);
+        viewAgenda.jtf_telefono.setEditable(false);
+        viewAgenda.jbtn_cancelar.setEnabled(false);
+        viewAgenda.jbtn_insertar.setEnabled(false);
+        viewAgenda.jbtn_editar.setEnabled(true);
+    }
+    /**
+     * Metodo para habilitar la edicion de un registro
+     */
+    private void jbtn_editar_actionPerformed() {
+        viewAgenda.jbtn_anterior.setEnabled(true);
+        viewAgenda.jbtn_siguiente.setEnabled(true);
+        viewAgenda.jbtn_primero.setEnabled(true);
+        viewAgenda.jbtn_ultimo.setEnabled(true);
+        viewAgenda.jbtn_modificar.setEnabled(true);
+        viewAgenda.jbtn_eliminar.setEnabled(false);
+        viewAgenda.jbtn_nuevo.setEnabled(false);
+        viewAgenda.jtf_nombre.setEditable(true);
+        viewAgenda.jtf_email.setEditable(true);
+        viewAgenda.jtf_telefono.setEditable(true);
+        viewAgenda.jbtn_cancelar.setEnabled(true);
+        viewAgenda.jbtn_insertar.setEnabled(false);
+        viewAgenda.jbtn_editar.setEnabled(false);
     }
 }
