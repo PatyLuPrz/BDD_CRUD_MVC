@@ -27,40 +27,40 @@ public class ViewMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jmb_archivo = new javax.swing.JMenuBar();
+        jm_archivo = new javax.swing.JMenu();
         jmi_agenda = new javax.swing.JMenuItem();
         jmi_detalle_contacto = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        js_separador = new javax.swing.JPopupMenu.Separator();
         jmi_salir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Archivo");
+        jm_archivo.setText("Archivo");
 
         jmi_agenda.setText("Agenda");
-        jMenu1.add(jmi_agenda);
+        jm_archivo.add(jmi_agenda);
 
         jmi_detalle_contacto.setText("Detalle Cotacto");
-        jMenu1.add(jmi_detalle_contacto);
-        jMenu1.add(jSeparator1);
+        jm_archivo.add(jmi_detalle_contacto);
+        jm_archivo.add(js_separador);
 
         jmi_salir.setText("Salir");
-        jMenu1.add(jmi_salir);
+        jm_archivo.add(jmi_salir);
 
-        jMenuBar1.add(jMenu1);
+        jmb_archivo.add(jm_archivo);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jmb_archivo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
+            .addGap(0, 495, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 337, Short.MAX_VALUE)
+            .addGap(0, 357, Short.MAX_VALUE)
         );
 
         pack();
@@ -102,11 +102,11 @@ public class ViewMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenu jm_archivo;
+    private javax.swing.JMenuBar jmb_archivo;
     public javax.swing.JMenuItem jmi_agenda;
     public javax.swing.JMenuItem jmi_detalle_contacto;
     public javax.swing.JMenuItem jmi_salir;
+    private javax.swing.JPopupMenu.Separator js_separador;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,9 +22,9 @@
                   <Component id="jp_principal" max="32767" attributes="0"/>
                   <Component id="jp_navegacion" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="jp_crud" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -40,7 +40,7 @@
                   </Group>
                   <Component id="jp_crud" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -60,23 +60,26 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jl_nombre" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="jl_email" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="jl_telefono" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jbtn_editar" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jl_nombre" min="-2" pref="49" max="-2" attributes="0"/>
+                                  <Component id="jl_email" min="-2" pref="49" max="-2" attributes="0"/>
+                                  <Component id="jl_telefono" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jtf_telefono" min="-2" pref="181" max="-2" attributes="0"/>
+                                  <Component id="jtf_email" min="-2" pref="181" max="-2" attributes="0"/>
+                                  <Component id="jtf_nombre" min="-2" pref="181" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jtf_telefono" min="-2" pref="181" max="-2" attributes="0"/>
-                              <Component id="jtf_email" min="-2" pref="181" max="-2" attributes="0"/>
-                              <Component id="jtf_nombre" min="-2" pref="181" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jl_titulo" alignment="0" min="-2" pref="242" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jl_titulo" alignment="0" min="-2" pref="242" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -85,7 +88,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jl_titulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jbtn_editar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jl_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jtf_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -161,6 +166,14 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Agenda v3.1"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="jbtn_editar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="editar"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -307,6 +320,7 @@
         <Component class="javax.swing.JButton" name="jbtn_modificar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Modificar"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
